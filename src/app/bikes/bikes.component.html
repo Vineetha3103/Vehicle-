@@ -1,0 +1,139 @@
+<section class="categories">
+    <div class="banner">
+        <img src="/assets/bike img/bikes.jpeg">
+    </div>
+    <div class="container">
+        <h1 class="heading">BIKE MODELS</h1>
+        <button class="btn btn-primary" (click)="editbike()">Edit</button>
+        <button class="btn btn-danger" (click)="deletebike()">Delete</button>
+    </div>
+   
+    <div class="box-container">
+        <div class="box">
+            <img (click)="goToPart('card1')" src="/assets/bike img/Hero MotoCorp.webp" alt="Hero Motorcarp">
+            <h3>Hero Motorcarp</h3>
+        </div>
+        <div class="box">
+            <img (click)="goToPart('card2')" src="/assets/bike img/Hondabikes.webp" alt="Honda Bikes">
+            <h3>Honda Bikes</h3>
+        </div>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img (click)="goToPart('card3')" src="/assets/bike img/Bajaj.jpg" alt="Bajaj ">
+            <h3>Bajaj Bikes</h3>
+        </div>
+        <div class="box">
+            <img (click)="goToPart('card4')" src="/assets/bike img/BMW Motorrad.jpg" alt="BMW Motorrad">
+            <h3> BMW Motorrad </h3>
+        </div>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img (click)="goToPart('card5')" src="/assets/bike img/TVS.webp" alt="TVS Bikes">
+            <h3> TVS Bikes </h3>
+        </div>
+        <div class="box">
+            <img (click)="goToPart('card6')" src="/assets/bike img/Royal Enfield.webp" alt="Royal Enfield">
+            <h3> Royal Enfield </h3>
+        </div>
+    </div>
+    
+</section> 
+
+ 
+
+<div class="products">
+   <div id="card1">
+    <h1 class="heading">HERO MOTORCARP</h1>
+   </div> 
+    <div class="boxs-container" >
+      <div class="boxs" *ngFor="let product of products">
+        <img [src]="product.imageUrl">
+        <h3>{{ product.title }}</h3>
+        <p>{{product.Engine}}</p>
+        <p>{{product.Mileage}}</p>
+        <p>{{product.Features}}</p>
+        <p class="fa fa-rupee">{{ product.price }}</p>
+        </div>
+    </div> 
+</div>    
+
+<div class="items">
+    <div id="card2">
+     <h1 class="heading">Honda Bikes</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let item of items">
+         <img [src]="item.imageUrl">
+         <h3>{{ item.title }}</h3>
+         <p>{{item.Engine}}</p>
+         <p>{{item.Mileage}}</p>
+         <h4>{{item.Features}}</h4>
+    
+         <p class="fa fa-rupee">{{ item.price }}</p>
+         </div>
+     </div> 
+ </div>    
+
+ <div class="sets">
+    <div id="card3">
+     <h1 class="heading">Bajaj Bikes</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let set of sets">
+         <img [src]="set.imageUrl">
+         <h3>{{ set.title }}</h3>
+         <p class="fa fa-rupee">{{ set.price }}</p>
+         <p>{{set.Engine}}</p>
+         <p>{{set.Mileage}}</p>
+         <p>{{set.Features}}</p>
+         </div>
+     </div> 
+ </div>    
+
+ <div class="Bitems">
+    <div id="card4">
+     <h1 class="heading">BMW Motorrad</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Bitem of Bitems">
+         <img [src]="Bitem.imageUrl">
+         <h3>{{ Bitem.title }}</h3>
+         <p class="fa fa-rupee">{{ Bitem.price }}</p>
+         <p>{{Bitem.Mileage}}</p>
+         <p>{{Bitem.Features}}</p>
+         </div>
+     </div> 
+ </div>    
+
+ <div class="Titems">
+    <div id="card5">
+     <h1 class="heading">TVS BIKES</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Titem of Titems">
+         <img [src]="Titem.imageUrl">
+         <h3>{{ Titem.title }}</h3>
+         <p class="fa fa-rupee">{{ Titem.price }}</p>
+         <p>{{Titem.Mileage}}</p>
+         <p>{{Titem.Features}}</p>
+         </div>
+     </div> 
+ </div>    
+
+ <div class="Ritems">
+    <div id="card6">
+     <h1 class="heading">Royal Enfield</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Ritem of Ritems">
+         <img [src]="Ritem.imageUrl">
+         <h3>{{ Ritem.title }}</h3>
+         <p class="fa fa-rupee">{{ Ritem.price }}</p>
+         <p>{{Ritem.Mileage}}</p>
+         <p>{{Ritem.Features}}</p>
+         </div>
+     </div> 
+ </div>    
+ 

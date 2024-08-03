@@ -1,0 +1,141 @@
+<section class="categories">
+    <div class="banner">
+        <img src="/assets/carimg/cars.jpg">
+    </div>
+    <div class="container">
+    <h1 class="heading">CAR MODELS</h1>
+    <button class="btn btn-primary" (click)="editCar()">Edit</button>
+    <button class="btn btn-danger" (click)="deleteCar()">Delete</button>
+    </div>
+    <div class="box-container">
+        <div class="box" (click)="goToPart('card1')">
+            <img  src="../assets/carimg/Toyota.jpg" alt="Toyota Cars">
+            <h3>Toyota Cars</h3>
+        </div>
+        <div class="box" (click)="goToPart('card2')">
+            <img  src="/assets/carimg/Honda.jpg" alt="Honda Cars">
+            <h3>Honda Cars</h3>
+        </div>
+    </div>
+    <div class="box-container" >
+        <div class="box" (click)="goToPart('card3')" >
+            <img src="/assets/carimg/Ford.jpg" alt="Ford Cars">
+            <h3>Ford Cars</h3>
+        </div>
+        <div class="box" (click)="goToPart('card4')">
+            <img  src="/assets/carimg/BMW.jpg" alt="BMW Cars">
+            <h3> BMW Cars </h3>
+        </div>
+    </div>
+    <div class="box-container">
+        <div class="box" (click)="goToPart('card5')">
+            <img  src="/assets/carimg/Mercedes-Benz.jpg" alt="Mercedes-Benz Cars">
+            <h3> Mercedes-Benz Cars </h3>
+        </div>
+        <div class="box" (click)="goToPart('card6')">
+            <img  src="/assets/carimg/Audi.jpg" alt="Audi Cars">
+            <h3> Audi Cars </h3>
+        </div>
+    </div>
+    
+</section> 
+
+ 
+
+<div class="products">
+   <div id="card1">
+    <h1 class="heading">TOYOTA CARS</h1>
+   </div> 
+    <div class="boxs-container" >
+      <div class="boxs" *ngFor="let product of products">
+        <img [src]="product.imageUrl">
+        <h3>{{ product.title }}</h3>
+        <p>{{product.fueltype}}</p>
+        <p>{{product.capacity}}</p>
+        <p>{{product.Features}}</p>
+        <p class="fa fa-rupee">{{ product.price }}</p>
+        </div>
+    </div> 
+</div>    
+
+<div class="items">
+    <div id="card2">
+     <h1 class="heading">HONDA CARS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let item of Hitems">
+         <img [src]="item.imageUrl">
+         <h3>{{ item.title }}</h3>
+         <p>{{item.fueltype}}</p>
+         <p>{{item.capacity}}</p>
+         <h4>{{item.Features}}</h4>
+    
+         <p class="fa fa-rupee">{{ item.price }}</p>
+         </div>
+     </div> 
+ </div>    
+
+ <div class="Fitems">
+    <div id="card3">
+     <h1 class="heading">FORD CARS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Fitem of Fitems">
+         <img [src]="Fitem.imageUrl">
+         <h3>{{ Fitem.title }}</h3>
+
+         <p class="fa fa-rupee">{{ Fitem.price }}</p>
+         <p>{{Fitem.fueltype}}</p>
+         <p>{{Fitem.capacity}}</p>
+         <p>{{Fitem.Features}}</p>
+         </div>
+     </div> 
+ </div>    
+
+ <div class="Bitems">
+    <div id="card4">
+     <h1 class="heading">BMW CARS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Bitem of Bitems">
+         <img [src]="Bitem.imageUrl">
+         <h3>{{ Bitem.title }}</h3>
+         <p class="fa fa-rupee">{{ Bitem.price }}</p>
+         <p>{{Bitem.fueltype}}</p>
+         <p>{{Bitem.capacity}}</p>
+         <p>{{Bitem.Features}}</p>
+         </div>
+     </div> 
+ </div>    
+ <div class="Mitems">
+    <div id="card5">
+     <h1 class="heading">MERCEDES-BENZ CARS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Mitem of Mitems">
+         <img [src]="Mitem.imageUrl">
+         <h3>{{ Mitem.title }}</h3>
+         <p class="fa fa-rupee">{{ Mitem.price }}</p>
+         <p>{{Mitem.fueltype}}</p>
+         <p>{{Mitem.capacity}}</p>
+         <p>{{Mitem.Features}}</p>
+         </div>
+     </div> 
+ </div>    
+ <div class="Aitems">
+    <div id="card6">
+     <h1 class="heading">AUDI CARS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Aitem of Aitems">
+         <img [src]="Aitem.imageUrl">
+         <h3>{{ Aitem.title }}</h3>
+         <p class="fa fa-rupee">{{ Aitem.price }}</p>
+         <p>{{Aitem.fueltype}}</p>
+         <p>{{Aitem.capacity}}</p>
+         <p>{{Aitem.Features}}</p>
+         </div>
+     </div> 
+ </div>    
+
+     

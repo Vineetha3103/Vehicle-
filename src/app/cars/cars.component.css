@@ -1,0 +1,126 @@
+.banner img {
+    position: relative;
+    width: 100vw;
+    height: 38.5rem;
+    margin-top:5rem;
+    
+}
+
+.categories .box-container{
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(2,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    gap: rem ;
+ 
+
+}
+.categories h1{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.categories .box-container .box{
+  padding: 1rem 1rem;
+  background: #f9f5f5; 
+  outline-offset: -1rem;
+  text-align: center;
+  border: 2px solid rgb(123, 115, 125);
+  outline: 4px solid #1589a0;
+  margin: 1rem; 
+  transition: transform 0.3s, outline 0.3s; 
+}
+.categories .box-container .box:hover{
+    outline: auto;
+    color: black;
+}
+.categories .box-container .box img{
+    margin:1rem;
+    height:20rem;
+    width: 35rem;
+}
+.categories .box-container .box h3{
+    font-size: 1.5rem;
+    line-height: 1.8;
+    color:black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} 
+.boxs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 2rem;
+  margin: 1rem;
+}
+.boxs {
+  padding: 2rem;
+  border: 2px solid grey;
+  padding-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center elements in the box */
+}
+.boxs img {
+  width: 30rem;
+  height: 20rem;
+  transition: 1s;
+}
+.boxs img:hover{
+  transform: scale(1.1) ;
+
+}
+.boxs h3 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.boxs p {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+} 
+.heading{
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 5px;
+}
+
+.container .heading {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.container .btn {
+  margin-left: 10px;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container .btn-primary {
+  background-color: #007bff;
+  color: white;
+  margin-left: 50px;
+  
+}
+
+.container .btn-danger {
+  background-color: #dc3545;
+  color: white;
+  margin-left: 20px;
+}
+
+.container .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.container .btn-danger:hover {
+  background-color: #c82333;
+}

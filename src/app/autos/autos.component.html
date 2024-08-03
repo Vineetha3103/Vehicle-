@@ -1,0 +1,137 @@
+<section class="categories">
+    <div class="banner">
+        <img src="/assets/auto img/autos.jpg">
+    </div>
+    <div class="container">
+        <h1 class="heading">AUTO MODELS</h1>
+       
+    </div>
+   
+    <div class="box-container">
+        <div class="box">
+            <img (click)="goToPart('card1')" src="/assets/auto img/Bajaj Auto.webp" alt="Bajaj Autos">
+            <h3>Bajaj Autos</h3>
+        </div>
+        <div class="box">
+            <img (click)="goToPart('card2')" src="/assets/auto img/Piaggio.jpeg" alt="Piaggio Autos">
+            <h3>Piaggio Autos</h3>
+        </div>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img (click)="goToPart('card3')" src="/assets/auto img/Mahindra auto.webp" alt="Mahindra Autos">
+            <h3>Mahindra Autos</h3>
+        </div>
+        <div class="box">
+            <img (click)="goToPart('card4')" src="/assets/auto img/TVS auto.jpg" alt="TVS Autos">
+            <h3> TVS Autos</h3>
+        </div>
+    </div>
+    <div class="box-container">
+        <div class="box">
+            <img (click)="goToPart('card5')" src="/assets/auto img/Atul Auto.png" alt=" Atul Autos">
+            <h3> Atul Autos </h3>
+        </div>
+        <div class="box">
+            <img (click)="goToPart('card6')" src="/assets/auto img/Lohia Auto.jpeg" alt=" Lohia Autos">
+            <h3>  Lohia Autos </h3>
+        </div>
+    </div>
+    
+</section> 
+
+ 
+
+<div class="products">
+   <div id="card1">
+    <h1 class="heading">BAJAJ AUTOS</h1>
+   </div> 
+    <div class="boxs-container" >
+      <div class="boxs" *ngFor="let product of  bajajAutos">
+        <img [src]="product.imageUrl">
+        <h3>{{ product.title }}</h3>
+        <p>{{product.fueltype}}</p>
+        <p>{{product.capacity}}</p>
+        <p>{{product.Features}}</p>
+        <p class="fa fa-rupee">{{ product.price }}</p>
+        </div>
+        <div>
+            <button class="btn btn-primary" (click)="editAuto()">Edit</button>
+            <button class="btn btn-danger" (click)="deleteAuto()" >Delete</button>      
+        </div>
+    </div> 
+</div>    
+
+<div class="items">
+    <div id="card2">
+     <h1 class="heading">PIAGGIO AUTOS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let item of piaggioAutos">
+         <img [src]="item.imageUrl">
+         <h3>{{ item.title }}</h3>
+         <p>{{item.fueltype}}</p>
+         <p>{{item.capacity}}</p>
+         <h4>{{item.Features}}</h4>
+    
+         <p class="fa fa-rupee">{{ item.price }}</p>
+         </div>
+     </div> 
+ </div>    
+
+ <div class="products">
+    <div id="card3">
+     <h1 class="heading">MAHINDRA AUTOS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Fitem of mahindraAutos">
+         <img [src]="Fitem.imageUrl">
+         <h3>{{ Fitem.title }}</h3>
+
+         <p class="fa fa-rupee">{{ Fitem.price }}</p>
+         <p>{{Fitem.fueltype}}</p>
+         <p>{{Fitem.capacity}}</p>
+         <p>{{Fitem.Features}}</p>
+         </div>
+     </div> 
+ </div>    
+
+ <div class="products">
+    <div id="card4">
+     <h1 class="heading">TVS AUTOS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Bitem of tvsAutos">
+         <img [src]="Bitem.imageUrl">
+         <h3>{{ Bitem.title }}</h3>
+         <p class="fa fa-rupee">{{ Bitem.price }}</p>
+         </div>
+     </div> 
+ </div> 
+ <div class="products">
+    <div id="card5">
+     <h1 class="heading">ATUL AUTOS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Aitem of atulAutos">
+         <img [src]="Aitem.imageUrl">
+         <h3>{{ Aitem.title }}</h3>
+         <p class="fa fa-rupee">{{ Aitem.price }}</p>
+         </div>
+     </div> 
+ </div> 
+ 
+ <div class="products">
+    <div id="card6">
+     <h1 class="heading">LOHIA AUTOS</h1>
+    </div> 
+     <div class="boxs-container" >
+       <div class="boxs" *ngFor="let Litem of lohiaAutos">
+         <img [src]="Litem.imageUrl">
+         <h3>{{ Litem.title }}</h3>
+         <p class="fa fa-rupee">{{ Litem.price }}</p>
+         </div>
+     </div> 
+ </div> 
+       
+       
