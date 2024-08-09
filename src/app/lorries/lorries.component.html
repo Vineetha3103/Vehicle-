@@ -1,0 +1,47 @@
+<section class="categories">
+  <div class="banner">
+    <img src="/assets/lorry img/BharatBenz.jpg" alt="Lorries Banner">
+  </div>
+  <h1 class="heading">LORRY MODELS</h1>
+  <div class="box-container">
+    <div class="box" *ngFor="let lorryGroup of objectKeys(lorries); let i = index">
+      <div>
+        <img (click)="goToPart('lorry' + (i + 1))" [src]="lorries[lorryGroup][0].imageUrl" [alt]="lorryGroup">
+        <h3>{{ lorryGroup }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="products">
+  <div *ngFor="let lorryGroup of objectKeys(lorries); let i = index" [id]="'lorry' + (i + 1)">
+    <h1 class="heading">{{ lorryGroup.toUpperCase() }}</h1>
+    <div class="boxs-container">
+      <div class="boxs" *ngFor="let lorry of lorries[lorryGroup]">
+        <img [src]="lorry.imageUrl" alt="{{ lorry.title }}">
+        <h3>{{ lorry.title }}</h3>
+        <p>{{ lorry.fueltype }}</p>
+        <p>{{ lorry.capacity }}</p>
+        <p>{{ lorry.Features }}</p>
+        <p class="fa fa-rupee">{{ lorry.price }}</p>
+        <button (click)="editLorry(lorry, lorryGroup)">Edit</button>
+        <button (click)="deleteLorry(lorry.id, lorryGroup)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="openform()">Add New Lorry</button>
+
+<div *ngIf="showform">
+  <form (ngSubmit)="saveLorry()" class="form-container">
+    <input [(ngModel)]="lorryForm.title" name="title" placeholder="Title" required>
+    <input [(ngModel)]="lorryForm.price" name="price" placeholder="Price" required>
+    <input [(ngModel)]="lorryForm.imageUrl" name="imageUrl" placeholder="Image URL" required>
+    <input [(ngModel)]="lorryForm.fueltype" name="fueltype" placeholder="Fuel Type" required>
+    <input [(ngModel)]="lorryForm.capacity" name="capacity" placeholder="Capacity" required>
+    <input [(ngModel)]="lorryForm.Features" name="Features" placeholder="Features" required>
+    <button type="submit">{{ editMode ? 'Update Lorry' : 'Save' }}</button>
+    <button type="button" (click)="resetForm()">Cancel</button>
+  </form>
+</div>

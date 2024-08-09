@@ -1,0 +1,47 @@
+<section class="categories">
+  <div class="banner">
+    <img src="/assets/bike img/Hero Karizma XMR.webp" alt="Bikes Banner">
+  </div>
+  <h1 class="heading">BIKE MODELS</h1>
+  <div class="box-container">
+    <div class="box" *ngFor="let bikeGroup of objectKeys(bikes); let i = index">
+      <div>
+        <img (click)="goToPart('bike' + (i + 1))" [src]="bikes[bikeGroup][0].imageUrl" [alt]="bikeGroup">
+        <h3>{{ bikeGroup }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="products">
+  <div *ngFor="let bikeGroup of objectKeys(bikes); let i = index" [id]="'bike' + (i + 1)">
+    <h1 class="heading">{{ bikeGroup.toUpperCase() }}</h1>
+    <div class="boxs-container">
+      <div class="boxs" *ngFor="let bike of bikes[bikeGroup]">
+        <img [src]="bike.imageUrl" alt="{{ bike.title }}">
+        <h3>{{ bike.title }}</h3>
+        <p>{{ bike.engine }}</p>
+        <p>{{ bike.mileage }}</p>
+        <p>{{ bike.features }}</p>
+        <p class="fa fa-rupee">{{ bike.price }}</p>
+        <button (click)="editBike(bike, bikeGroup)">Edit</button>
+        <button (click)="deleteBike(bike.id, bikeGroup)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="openForm()">Add New Bike</button>
+
+<div *ngIf="showForm">
+  <form (ngSubmit)="saveBike()" class="form-container">
+    <input [(ngModel)]="bikeForm.title" name="title" placeholder="Title" required>
+    <input [(ngModel)]="bikeForm.price" name="price" placeholder="Price" required>
+    <input [(ngModel)]="bikeForm.imageUrl" name="imageUrl" placeholder="Image URL" required>
+    <input [(ngModel)]="bikeForm.engine" name="engine" placeholder="Engine" required>
+    <input [(ngModel)]="bikeForm.mileage" name="mileage" placeholder="Mileage" required>
+    <input [(ngModel)]="bikeForm.features" name="features" placeholder="Features" required>
+    <button type="submit">{{ editMode ? 'Update Bike' : 'Save' }}</button>
+    <button type="button" (click)="resetForm()">Cancel</button>
+  </form>
+</div>

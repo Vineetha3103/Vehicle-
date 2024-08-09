@@ -1,0 +1,47 @@
+<section class="categories">
+  <div class="banner">
+    <img src="/assets/auto img/autos.jpg" alt="Autos Banner">
+  </div>
+  <h1 class="heading">AUTO MODELS</h1>
+  <div class="box-container">
+    <div class="box" *ngFor="let autoGroup of objectKeys(autos); let i = index">
+      <div>
+        <img (click)="goToPart('auto' + (i + 1))" [src]="autos[autoGroup][0].imageUrl" [alt]="autoGroup">
+        <h3>{{ autoGroup }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="products">
+  <div *ngFor="let autoGroup of objectKeys(autos); let i = index" [id]="'auto' + (i + 1)">
+    <h1 class="heading">{{ autoGroup.toUpperCase() }}</h1>
+    <div class="boxs-container">
+      <div class="boxs" *ngFor="let auto of autos[autoGroup]">
+        <img [src]="auto.imageUrl" alt="{{ auto.title }}">
+        <h3>{{ auto.title }}</h3>
+        <p>{{ auto.fueltype }}</p>
+        <p>{{ auto.capacity }}</p>
+        <p>{{ auto.Features }}</p>
+        <p class="fa fa-rupee">{{ auto.price }}</p>
+        <button (click)="editAuto(auto, autoGroup)">Edit</button>
+        <button (click)="deleteAuto(auto.id, autoGroup)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="openform()">Add New Auto</button>
+
+<div *ngIf="showform">
+  <form (ngSubmit)="saveAuto()" class="form-container">
+    <input [(ngModel)]="autoForm.title" name="title" placeholder="Title" required>
+    <input [(ngModel)]="autoForm.price" name="price" placeholder="Price" required>
+    <input [(ngModel)]="autoForm.imageUrl" name="imageUrl" placeholder="Image URL" required>
+    <input [(ngModel)]="autoForm.fueltype" name="fueltype" placeholder="Fuel Type" required>
+    <input [(ngModel)]="autoForm.capacity" name="capacity" placeholder="Capacity" required>
+    <input [(ngModel)]="autoForm.Features" name="Features" placeholder="Features" required>
+    <button type="submit">{{ editMode ? 'Update Auto' : 'Save' }}</button>
+    <button type="button" (click)="resetForm()">Cancel</button>
+  </form>
+</div>

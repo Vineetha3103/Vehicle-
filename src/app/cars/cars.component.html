@@ -1,0 +1,47 @@
+<section class="categories">
+  <div class="banner">
+    <img src="/assets/carimg/cars.jpg" alt="Cars Banner">
+  </div>
+  <h1 class="heading">CAR MODELS</h1>
+  <div class="box-container">
+    <div class="box" *ngFor="let carGroup of objectKeys(cars); let i = index">
+      <div>
+        <img (click)="goToPart('card' + (i + 1))" [src]="cars[carGroup][0].imageUrl" [alt]="carGroup">
+        <h3>{{ carGroup }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="products">
+  <div *ngFor="let carGroup of objectKeys(cars); let i = index" [id]="'card' + (i + 1)">
+    <h1 class="heading">{{ carGroup.toUpperCase() }}</h1>
+    <div class="boxs-container">
+      <div class="boxs" *ngFor="let car of cars[carGroup]">
+        <img [src]="car.imageUrl" alt="{{ car.title }}">
+        <h3>{{ car.title }}</h3>
+        <p>{{ car.fueltype }}</p>
+        <p>{{ car.capacity }}</p>
+        <p>{{ car.Features }}</p>
+        <p class="fa fa-rupee">{{ car.price }}</p>
+        <button (click)="editCar(car, carGroup)">Edit</button>
+        <button (click)="deleteCar(car.id, carGroup)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="openform()">Add New Car</button>
+
+<div *ngIf="showform">
+  <form (ngSubmit)="saveCar()" class="form-container">
+    <input [(ngModel)]="carForm.title" name="title" placeholder="Title" required>
+    <input [(ngModel)]="carForm.price" name="price" placeholder="Price" required>
+    <input [(ngModel)]="carForm.imageUrl" name="imageUrl" placeholder="Image URL" required>
+    <input [(ngModel)]="carForm.fueltype" name="fueltype" placeholder="Fuel Type" required>
+    <input [(ngModel)]="carForm.capacity" name="capacity" placeholder="Capacity" required>
+    <input [(ngModel)]="carForm.Features" name="Features" placeholder="Features" required>
+    <button type="submit">{{ editMode ? 'Update Car' : 'Save' }}</button>
+    <button type="button" (click)="resetForm()">Cancel</button>
+  </form>
+</div>

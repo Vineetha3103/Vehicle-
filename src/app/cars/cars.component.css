@@ -1,0 +1,129 @@
+.banner img {
+  position: relative;
+  width: 100vw;
+  height: 38.5rem;
+  margin-top: 5rem;
+}
+
+.categories .box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.categories h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.categories .box-container .box {
+  padding: 1rem;
+  background: #f9f5f5;
+  text-align: center;
+  border: 2px solid rgb(123, 115, 125);
+  outline: 4px solid #1589a0;
+  margin: 1rem;
+  transition: transform 0.3s, outline 0.3s;
+}
+
+.categories .box-container .box:hover {
+  outline: auto;
+  color: black;
+}
+
+.categories .box-container .box img {
+  margin: 1rem;
+  height: 15rem;
+  width: 11.5rem;
+}
+
+.categories .box-container .box h3 {
+  font-size: 1.5rem;
+  color: black;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.boxs-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin: 1rem;
+}
+
+.boxs {
+  padding: 2rem;
+  border: 2px solid grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boxs img {
+  width: 30rem;
+  height: 20rem;
+  transition: 1s;
+}
+
+.boxs img:hover {
+  transform: scale(1.1);
+}
+
+.boxs h3 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.boxs p {
+  font-size: 1.3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.boxs button {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: #1589a0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.boxs button:hover {
+  background-color: #0d657a;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 2px solid grey;
+  width: 50%;
+  margin: 0 auto;
+  background: #f9f5f5;
+}
+
+.form-container input {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  width: 100%;
+  border: 1px solid grey;
+}
+
+.form-container button {
+  margin-top: 1rem;
+  padding: 0.5rem 2rem;
+  background-color: #1589a0;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-container button:hover {
+  background-color: #0d657a;
+}
