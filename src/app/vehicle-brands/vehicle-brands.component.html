@@ -1,0 +1,38 @@
+<!-- vehicle-brands.component.html -->
+<div class="vehicle-brands">
+    <h1>Brands</h1>
+    <button (click)="toggleForm()" class="btn btn-secondary">Add Brand</button>
+    <ul>
+      <li *ngFor="let brand of brands">
+        <img [src]="brand.imageUrl" alt="{{ brand.brandName }}" class="brand-image"/>
+        <a [routerLink]="['/models', brand.brandId]">{{ brand.brandName }}</a>
+        
+      </li>
+      
+    </ul>
+    
+  </div>
+
+  <div *ngIf="isFormVisible">
+  <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="vehicleId">Vehicle Type</label>
+      <select id="vehicleId" formControlName="vehicleId" class="form-control">
+        <option *ngFor="let vehicle of vehicleTypes" [value]="vehicle.id">{{ vehicle.vehicleType }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="brandName">Brand Name</label>
+      <input type="text" id="brandName" formControlName="brandName" class="form-control" placeholder="Enter brand name" />
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">Image URL</label>
+      <input type="text" id="imageUrl" formControlName="imageUrl" class="form-control" placeholder="Enter image URL" />
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="brandForm.invalid">Add Brand</button>
+  </form>
+  </div>
+  

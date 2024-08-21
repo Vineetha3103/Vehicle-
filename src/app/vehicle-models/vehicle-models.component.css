@@ -1,0 +1,24 @@
+.vehicle-models {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .btn-primary {
+    display: block;
+    width: 100%;
+  }
+  
+  .boxs-container {
+    margin-top: 20px;
+  }
+  
+  .boxs {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+  }
+  
