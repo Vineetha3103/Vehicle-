@@ -1,0 +1,57 @@
+<div class="box">
+<div class="navbar">
+  <div class="logo">
+    <a routerLink='nav-bar'><img  src="../assets/logo.png" alt="Logo"/></a>
+  </div>
+  <ul class="nav-links">
+    <li *ngFor="let vehicle of vehicleTypes">
+      <a [routerLink]="['/brands', vehicle.id]">{{ vehicle.vehicleType }}</a>
+    </li>
+    <li>
+      <button class="btn btn-secondary" (click)="toggleForm()">Add Vehicle Type</button>
+    </li>
+    <li>
+      <button class="btn btn-danger" (click)="toggleDeleteDropdown()">Delete Vehicle</button>
+      <div *ngIf="isDeleteDropdownVisible" class="delete-dropdown">
+        <select class="form-select" [(ngModel)]="selectedVehicleId">
+          <option *ngFor="let vehicle of vehicleTypes" [value]="vehicle.id">
+            {{ vehicle.vehicleType }}
+          </option>
+        </select>
+        <button class="btn btn-danger" (click)="deleteVehicle()">Confirm Delete</button>
+      </div>
+    </li>
+  </ul>
+  </div>
+
+
+
+ <div class="carousel-container">
+  <div class="carousel-slide" [ngStyle]="{'transform': 'translateX(' + translateX + '%)'}">
+    <div class="carousel-item" *ngFor="let slide of slides">
+      <img [src]="slide.url" alt="Slide image">
+      <div class="carousel-caption">
+        <h5>{{ slide.text }}</h5>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control prev" (click)="prevSlide()">&#10094;</button>
+  <button class="carousel-control next" (click)="nextSlide()">&#10095;</button>
+ </div>
+</div>
+<div class="form-overlay" *ngIf="isFormVisible">
+<div class="container" >
+  <button class="close-btn" (click)="closeForm()">X</button>
+  <h2>Add Vehicle Type</h2>
+  <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="vehicleType">Vehicle Type</label>
+      <input type="text" id="vehicleType" formControlName="vehicleType"class="form-control" placeholder="Enter vehicle type"/>
+      <div *ngIf="vehicleForm.get('vehicleType')?.invalid && vehicleForm.get('vehicleType')?.touched">
+        Vehicle type is required
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="vehicleForm.invalid">Add Vehicle</button>
+  </form>
+</div>
+</div>

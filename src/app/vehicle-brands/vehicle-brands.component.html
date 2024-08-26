@@ -1,0 +1,87 @@
+<div class="vehicle-brands">
+  <div class="actions">
+    <h1>Brands</h1>
+    <button (click)="toggleForm()" class="btn btn-secondary">Add Brand</button>
+    <button class="btn btn-danger" (click)="toggleDeleteDropdown()">Delete Brand</button>
+    <button class="btn btn-warning" (click)="toggleEditForm()">Edit Brand</button>
+    <div *ngIf="isDeleteDropdownVisible" class="delete-dropdown">
+      <select class="form-select" [(ngModel)]="selectedBrandId">
+        <option *ngFor="let brand of brands" [value]="brand.brandId">
+          {{ brand.brandName }}
+        </option>
+      </select>
+      <button class="btn btn-danger" (click)="deleteBrandfromlist()">Confirm Delete</button>
+    </div>
+  </div>
+
+  <div *ngIf="isFormVisible" class="add-brand-form">
+    <button class="close-btn" (click)="closeForm()">X</button>
+    <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="vehicleId">Vehicle Type</label>
+        <select id="vehicleId" formControlName="vehicleId" class="form-control">
+          <option *ngFor="let vehicle of vehicleTypes" [value]="vehicle.id">{{ vehicle.vehicleType }}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="brandName">Brand Name</label>
+        <input type="text" id="brandName" formControlName="brandName" class="form-control" placeholder="Enter brand name" />
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input type="text" id="imageUrl" formControlName="imageUrl" class="form-control" placeholder="Enter image URL" />
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="brandForm.invalid">Add Brand</button>
+      
+      
+
+    </form>
+  </div>
+
+
+  <div *ngIf="isEditFormVisible" class="edit-brand-form">
+    <button class="close-btn" (click)="closeForm()">X</button>
+    <form [formGroup]="editBrandForm" (ngSubmit)="onEditSubmit()">
+      <div class="form-group">
+        <label for="editBrandId">Select Brand to Edit</label>
+        <select id="editBrandId" formControlName="brandId" class="form-control" (change)="onBrandSelect($event)">
+          <option *ngFor="let brand of brands" [value]="brand.brandId">{{ brand.brandName }}</option>
+        </select>
+      </div>
+
+
+  <div class="form-group">
+    <label for="editVehicleId">Vehicle Type</label>
+    <select id="editVehicleId" formControlName="vehicleId" class="form-control">
+      <option *ngFor="let vehicle of vehicleTypes" [value]="vehicle.id">{{ vehicle.vehicleType }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="editBrandName">Brand Name</label>
+    <input type="text" id="editBrandName" formControlName="brandName" class="form-control" placeholder="Enter brand name" />
+  </div>
+
+  <div class="form-group">
+    <label for="editImageUrl">Image URL</label>
+    <input type="text" id="editImageUrl" formControlName="imageUrl" class="form-control" placeholder="Enter image URL" />
+  </div>
+
+  <button type="submit" class="btn btn-warning" [disabled]="editBrandForm.invalid">Update Brand</button>
+</form>
+</div>
+
+
+  <div *ngFor="let vehicle of vehicleTypes" class="vehicle-section">
+    <h2>{{ vehicle.vehicleType }}</h2>
+    <div class="brand-cards">
+      <div class="brand-card" *ngFor="let brand of brandsByVehicleType(vehicle.id)">
+        <img [src]="brand.imageUrl" alt="{{ brand.brandName }}" class="brand-image" />
+        <a [routerLink]="['/models', brand.brandId]" class="brand-name">{{ brand.brandName }}</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,136 @@
+<div class="vehicle-models">
+<div class="container">
+  <h1>Models</h1>
+
+  <!-- Buttons for Add, Edit, Delete -->
+  <div class="btn-group">
+    <button class="btn btn-secondary" (click)="showAddForm = !showAddForm">
+      {{ showAddForm ? 'Cancel' : 'Add Model' }}
+    </button>
+    <button class="btn btn-info" (click)="showEditForm = !showEditForm">
+      {{ showEditForm ? 'Cancel' : 'Edit Model' }}
+    </button>
+    <button class="btn btn-danger" (click)="showDeleteForm = !showDeleteForm">
+      {{ showDeleteForm ? 'Cancel' : 'Delete Model' }}
+    </button>
+  </div>
+</div>
+
+  <!-- Conditional display of the Add form -->
+  <div class="add-brand-form" *ngIf="showAddForm">
+    
+    <h2>Add Model</h2>
+     
+    <form [formGroup]="addModelForm" (ngSubmit)="onAddSubmit()">
+      
+      <div class="form-group">
+        <label for="brandId">Brand</label>
+        <select id="brandId" formControlName="brandId" class="form-control">
+          <option *ngFor="let brand of brands" [value]="brand.brandId">{{ brand.brandName }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="modelName">Model Name</label>
+        <input type="text" id="modelName" formControlName="modelName" class="form-control" placeholder="Enter model name" />
+      </div>
+      <div class="form-group">
+        <label for="engineType">Engine Type</label>
+        <input type="text" id="engineType" formControlName="engineType" class="form-control" placeholder="Enter engine type" />
+      </div>
+      <div class="form-group">
+        <label for="capacity">Capacity</label>
+        <input type="number" id="capacity" formControlName="capacity" class="form-control" placeholder="Enter capacity" />
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" formControlName="price" class="form-control" placeholder="Enter price" />
+      </div>
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input type="text" id="imageUrl" formControlName="imageUrl" class="form-control" placeholder="Enter image URL" />
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="addModelForm.invalid">Add Model</button>
+    </form>
+  </div>
+ 
+
+      
+  <div *ngIf="showEditForm" class="edit-brand-form">
+    <h2>Edit Model</h2>
+    <form [formGroup]="editModelForm" (ngSubmit)="onEditSubmit()">
+      
+      <!-- Dropdown to select the model to edit -->
+      <div class="form-group">  
+        <label for="modelId">Select Model to Edit</label>
+        <select id="modelId" formControlName="modelId" (change)="onEditModelSelection($event)" class="form-control">
+          <option *ngFor="let model of models" [value]="model.modelId">{{ model.modelName }}</option>
+        </select>
+      </div>
+  
+      <!-- Input fields with placeholders showing existing data -->
+      <div class="form-group">
+        <label for="modelName">Model Name</label>
+        <input type="text" id="modelName" formControlName="modelName" class="form-control" [placeholder]="editModelForm.get('modelName')?.value || 'Enter model name'" />
+      </div>
+  
+      <div class="form-group">
+        <label for="engineType">Engine Type</label>
+        <input type="text" id="engineType" formControlName="engineType" class="form-control" [placeholder]="editModelForm.get('engineType')?.value || 'Enter engine type'" />
+      </div>
+  
+      <div class="form-group">
+        <label for="capacity">Capacity</label>
+        <input type="number" id="capacity" formControlName="capacity" class="form-control" [placeholder]="editModelForm.get('capacity')?.value || 'Enter capacity'" />
+      </div>
+  
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" formControlName="price" class="form-control" [placeholder]="editModelForm.get('price')?.value || 'Enter price'" />
+      </div>
+  
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input type="text" id="imageUrl" formControlName="imageUrl" class="form-control" [placeholder]="editModelForm.get('imageUrl')?.value || 'Enter image URL'" />
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="editModelForm.invalid">Update Model</button>
+    </form>
+  </div>
+  
+
+
+  <!-- Conditional display of the Delete form -->
+  <div *ngIf="showDeleteForm">
+    <h2>Delete Model</h2>
+    <form [formGroup]="deleteModelForm" (ngSubmit)="onDeleteSubmit()">
+      <div class="form-group">
+        <label for="deleteModelId">Select Model to Delete</label>
+        <select id="deleteModelId" formControlName="modelId" class="form-control">
+          <option *ngFor="let model of models" [value]="model.modelId">{{ model.modelName }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-danger" [disabled]="deleteModelForm.invalid">Delete Model</button>
+    </form>
+  </div>  
+
+  <!-- Display existing models as cards -->
+  <div *ngFor="let vehicleTyp of vehicleTypes" class="vehicle-section">
+    <h1 class="h1">{{ vehicleTyp.vehicleType }}</h1>
+    <div *ngFor="let brand of vehicleTyp.brands">
+      <h2>{{ brand.brandName }}</h2>
+      <div class="boxs-container">
+        <div class="boxs" *ngFor="let model of brand.models">
+          <div class="card">
+            <img [src]="model.imageUrl" class="card-img-top" alt="{{ model.modelName }}" />
+            <div class="card-body">
+              <h3> {{ model.modelName }} </h3>
+              <p> Engine Type: {{ model.engineType }} </p>
+              <p> Capacity: {{ model.capacity }} </p>
+              <p class="fa fa-rupee">Price: {{ model.price }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+  
