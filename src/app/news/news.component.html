@@ -1,0 +1,77 @@
+
+
+<div *ngIf="errorMessage; else newsList">
+    <p>{{ errorMessage }}</p>
+  </div>
+  
+  
+  
+  <ng-template #newsList>
+   
+    <div  class="art" *ngIf="articles.length > 0; else noNews">
+      <div  *ngFor="let article of first" class="news-card">
+        <div class="arts">
+        <img [src]="article.urlToImage" alt="News Image" width="300" />
+       <div>
+        <h2>{{ article.title }}</h2>
+        <div class="arts">
+          <p>{{article.author}}</p>
+          <p>{{article.publishedAt}}</p>
+        </div>
+       </div>
+        </div>
+        <div class="list">
+        <p>{{ article.description }}</p>
+        <a [href]="article.url" target="_blank">Read more</a>
+        </div>
+      </div>
+  
+    </div>
+    <hr>
+  
+   
+
+  <div  class="artic" *ngIf=  "articles.length > 0; else noNews">
+    <div  *ngFor="let article of second" class="news-card">
+      <div class="article">
+      <img [src]="article.urlToImage" alt="News Image" width="300" />
+     <div>
+      <h4>{{ article.title }}</h4>
+      <div class="arts">
+        <p>{{article.author}}</p>
+        <p>{{article.publishedAt | date:'dd/MM/yyyy'}}</p>
+      </div>
+     </div>
+      </div>
+      </div>
+      </div>
+      <hr>
+
+      <div  class="art" *ngIf="articles.length > 0; else noNews">
+      <div  *ngFor="let article of third" class="news-card">
+        <div class="arts">
+        <img [src]="article.urlToImage" alt="News Image" width="300" />
+       <div>
+        <h2>{{ article.title }}</h2>
+        <div class="arts">
+          <p>{{article.author}}</p>
+          <p>{{article.publishedAt}}</p>
+        </div>
+       </div>
+        </div>
+        <div class="list">
+        <p>{{ article.description }}</p>
+        <a [href]="article.url" target="_blank">Read more</a>
+        </div>
+      </div>
+  
+    </div>
+
+
+      <ng-template #noNews>
+        <p>No news available at the moment.</p>
+      </ng-template>
+    </ng-template>
+
+
+  

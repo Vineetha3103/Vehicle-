@@ -1,0 +1,45 @@
+<div class="books">
+
+<div class="navbar">
+   <img src="https://www.thehindu.com/theme/images/th-online/thehindu-logo.svg ">
+   <div class="nav">
+      <h1>India</h1>
+      <h1>World</h1>
+      <h1>Movies</h1>
+      <h1> Technology</h1>
+      <h1>e-paper</h1>
+   </div>
+  
+</div>
+
+
+
+
+
+<div class="news">
+  <h1>Latest Updates</h1>
+  <hr>
+</div>
+<div class=" container">
+<div class="dashboard">
+  <h1>SPOTLIGHT</h1>
+  <hr>
+  <div  *ngIf="articles.length">
+    <div *ngFor="let article of articles" >
+      <h4>{{article.title}}</h4>
+      <div class="arts">
+        <p>{{article.author}}</p>
+        <p>{{article.publishedAt |date: 'dd-MM-yyyy'  }}</p>
+      </div>
+    </div>
+
+    </div>
+
+  </div>
+<hr>
+  <app-news></app-news>   
+  <hr>
+  <app-podcast></app-podcast>
+  
+   
+  

@@ -1,0 +1,68 @@
+.books{
+    background-color: lightgrey;
+    padding: 1px;
+    
+  
+    
+}
+.navbar{
+    position: unset;
+    text-align: center;
+}
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px;
+   border-top:5px solid rgb(120, 38, 38);
+}
+.nav:hover{
+    text-decoration: underline;
+}
+.news{
+    color: black;
+    font-style: italic;
+    
+}
+
+.art{
+    display: block;
+    justify-content:space-between;
+    margin: 20px;
+    
+}
+
+.arts {
+    display: flex;
+    justify-content:space-around;
+    
+
+
+}
+.list{
+    margin: 10px;
+    
+}
+
+
+
+.dashboard{
+    width:200px;
+    background-color: beige;
+    padding: 10px;
+    margin: 10px;
+    font-size: small;
+    height: 500px;
+}
+.container{
+    display: flex;
+    justify-content: space-around;
+
+}
+.phone{
+    border-left: 2px solid black;
+    padding: 10px;
+   
+}
+.post{
+    margin-right:50px;
+}

@@ -1,0 +1,65 @@
+.art{
+    display: block;
+    justify-content:center;
+  
+    width: 850px;
+    margin-left: 80px;
+    margin-right: 29px;
+    
+    
+}
+
+.arts {
+    display: flex;
+    justify-content:space-around;
+   
+   
+
+}
+.art img{
+    margin:20px;
+}
+.arts p{
+    margin: 1.5px;
+    
+}
+.list{
+    margin: 10px;
+    
+}
+
+.article{
+    display: block;
+    justify-content:space-around;
+    margin: 10px;
+   
+   
+}
+.article img{
+    width: 200px;
+    height: 110px;
+    
+}
+
+
+.artic{
+    display: flex;
+    justify-content:space-around;
+    width: 200px;
+    margin-left: 60px;
+    margin-right: 29px;
+    
+   
+    
+   
+
+}
+
+.arts img{
+    width: 400px;
+    height: 150px;
+
+}
+.artic p{
+    font-size: 14px;
+}
