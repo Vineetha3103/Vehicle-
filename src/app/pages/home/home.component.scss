@@ -1,0 +1,79 @@
+
+/* styles.css or styles.scss */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+$primary-color: #ffffff;
+$text-color: #005792;
+$hover-color: #005792;
+.containr{
+    font-family: 'Nunito', sans-serif;  
+   
+    
+}
+
+    .layout{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        font-family: 'Nunito', sans-serif;  
+        margin-right: 0px;  
+    }   
+  
+        .h1 {
+          font-size: 52px;
+          font-weight: bold;
+        
+        }
+        .p {
+          font-size: 0.9rem;
+          font-weight: 300px;
+          color:#8A8A8A;
+          line-height: 24.55px;
+        }
+      
+   
+    .color1{
+        color: #000000;
+        margin-right: 10px;
+    }
+    .color2{
+        color: $text-color;
+        margin-left: 5px;
+       
+    }
+    
+    .screen-img-container, 
+     .screen-img {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .button{
+        color: $text-color;
+        margin: 3px;
+        background-color: #ffff;
+        padding: 13px 27px 13px 27px;
+        font-size: 18px;
+        border-radius: 7px;
+        border: 1px solid $text-color;
+
+        &:hover {
+            background-color: $hover-color;
+            border-radius: 7px;
+            padding: 13px 27px 13px 27px;
+            color: #ffff;
+          }
+
+
+    }
+    .explore{
+        text-align: center;
+        font-family: 'Nunito', sans-serif; 
+    }
+ 
+    
+    .posts{
+        display: block;
+        justify-content: center;
+    }
+

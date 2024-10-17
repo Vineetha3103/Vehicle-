@@ -1,0 +1,44 @@
+[
+    {
+        "title": "The Power Of Positive Thinking",
+        "author": "Norman Vincent Peale",
+        "rating": "★★★★☆",
+        "availability": "Available",
+        "image": "assets/images/Positive.png"
+    },
+    {
+        "title": "Atomic Habits",
+        "author": "James Clear",
+        "rating": "★★★★★",
+        "availability": "Available",
+        "image": "assets/images/javascript.png"
+    },
+    {
+        "title": "Deep Work",
+        "author": "Cal Newport",
+        "rating": "★★★★☆",
+        "availability": "Available",
+        "image": "assets/images/Positive.png"
+    },
+    {
+        "title": "The Subtle Art of Not Giving up",
+        "author": "Mark Manson",
+        "rating": "★★★☆☆",
+        "availability": "Out of Stock",
+        "image": "assets/images/javascript.png"
+    },
+    {
+        "title": "Educated",
+        "author": "Tara Westover",
+        "rating": "★★★★☆",
+        "availability": "Available",
+        "image": "assets/images/Positive.png"
+    },
+    {
+        "title": "Thinking, Fast and Slow",
+        "author": "Daniel Kahneman",
+        "rating": "★★★★☆",
+        "availability": "Available",
+        "image": "assets/images/javascript.png"
+    }
+]

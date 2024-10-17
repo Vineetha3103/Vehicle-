@@ -1,0 +1,20 @@
+
+<nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/Tac Logo.png" alt="tech.at.core" />
+    </div>
+  
+    
+    <button class="navbar-toggler" >
+      <span class="toggler-icon" (click)="toggleNavbar()">☰</span>
+    </button>
+  
+   
+    <ul class="navbar-menu m-3" *ngIf="!isNavbarOpen">
+      <li><a routerLink="/">Home</a></li>
+      <li><a routerLink="/">Learning Path</a></li>
+      <li><a routerLink="/">Support</a></li>
+      <li><a routerLink="/">Library</a></li>
+    </ul>
+  </nav>
+  

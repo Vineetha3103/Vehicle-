@@ -1,0 +1,48 @@
+
+{
+    "learningPaths": [
+      {
+        "department": "Beginner Learning Path",
+        "details": "The Beginner Learning Path provides an introductory journey through foundational concepts and skills for new learners in various fields.",
+        "description": "2 Courses",
+        "image": "beginner-path.png"
+      },
+      {
+        "department": "DevOps Engineer",
+        "details": "The DevOps Engineer Path is tailored for IT professionals who wish to gain a comprehensive understanding of both development and operations, including coding, infrastructure management, system administration, and DevOps toolchains.",
+        "description": "10 Courses",
+        "image": "devops-path.png"
+      },
+      {
+        "department": "Software Development",
+        "details": "This Software Development Path offers ten in-depth courses covering key aspects of software design, development, and maintenance, aimed at preparing developers with the latest industry practices.",
+        "description": "10 Courses",
+        "image": "software-development-path.png"
+      },
+      {
+        "department": "QA Learning Path",
+        "details": "The QA Learning Path features five comprehensive courses focused on quality assurance and testing methodologies to ensure software reliability and effectiveness.",
+        "description": "5 Courses",
+        "image": "devops-path.png"
+      },
+      {
+        "department": "UI/UX Learning ",
+        "details": "The UI/UX Learning Path consists of eight specialized courses that guide learners through the principles of user interface design and user experience optimization for effective digital products.",
+        "description": "8 Courses",
+        "image": "ui-ux-learning-path.png"
+      },
+      {
+        "department": "Machine Learning Path",
+        "details": "The Machine Learning Path contains seven courses designed to provide a foundation in artificial intelligence, data analysis, and data-driven decision-making, essential for future tech innovations.",
+        "description": "7 Courses",
+        "image": "machine-learning-path.png"
+      },
+      {
+        "department": "HR Learning Path",
+        "details": "The HR Learning Path includes three courses focused on modern human resources practices, personnel management, and strategic hiring techniques to build effective teams.",
+        "description": "3 Courses",
+        "image": "hr-learn-path.png"
+      }
+    ]
+  }
+  
