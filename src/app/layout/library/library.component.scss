@@ -2,6 +2,9 @@ $hover-color: #005792;
 .content{
     margin-top: 30px;
     margin: 150px;
+    @media (max-width: 768px) {
+        margin: 30px;
+      }
 }
 .h1{
     font-weight: bold;
@@ -17,27 +20,37 @@ $hover-color: #005792;
 .Books{
     display: flex;
     margin: 10px;
-   
-}
 .p{
     background-color: #F0F5F2;
-    border-radius: 7px;
+    border-radius: 15px;
+    width: auto;
     margin: 10px;
+    padding: 10px;
     font-size: 14px;
     font-weight: bold;
-    margin-bottom: 20px;
+    padding-right: 30px;
+  
     &:hover {
         background-color: $hover-color; 
-        border-radius: 7px;  
-        padding: 5px ;
+        border-radius: 15px;  
+        padding: 10px ;
         color: #ffff;
+        margin: 10px;
+        padding-right: 30px;
         
     }
+}
 }
 .card-container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
+  
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center; 
+
+}
 }
 .card{
     background-color: #F3F3F3 ;
@@ -45,19 +58,19 @@ $hover-color: #005792;
     height: 270px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    padding: 30px;
+    justify-content: start;
+    padding: 20px;
     border:5px solid #f0f0f0;
     margin:0px ;
+    
     border-radius: 10px;
-
-  
 }
 
 .img-fluid{
-    width: 146px;
+    max-width: 200px;
     height: 200px;
     border-radius: 9px;
+
 }
 
 .text-container{
@@ -72,7 +85,7 @@ $hover-color: #005792;
     }
     p{
         color: #111827 50%;
-       font-size: 8px;
+        font-size: 8px;
 
     }
     
@@ -81,7 +94,9 @@ $hover-color: #005792;
     color:  #608C62;
     font-size: 8px;
     background-color: #E8FFE9;
-    width: 40px;
+    width: 60px;
+    padding: 4px;
+    padding-left:7px;
     border-radius: 9px;
     
 
@@ -90,26 +105,36 @@ $hover-color: #005792;
 
 .category-container{
     background-color:#F0F8FF ;
-    width: 100%;
-    height: 370px;
     display: flex;
     flex-direction: row;
    justify-content: space-between;
    margin-top:200px;
    border-radius: 10px;
+   height: 370px;
+   @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
 
    .top-img{
-     width: 554px;
-     height: 370px;
+    max-width: 100%;
+    height:  370px;;
+   }
+   @media(max-width:100%){
+    height: auto;
    }
 
 }
+
 .reading{
     padding: 30px;
     margin: 80px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
     h1{
         color: #111827;
-        font-size: 42px;
+        font-size: 35px;
         font-weight: bold;
     }
 
@@ -122,30 +147,36 @@ $hover-color: #005792;
         border-radius: 3px;
         margin-top: 5px;
         margin-left: 10px;
+        margin-bottom: 60px;
     }
 }
 
 .mentors{
     background: linear-gradient(0deg, rgba(189, 214, 242, 0.7) -65.33%, #FFFFFF 76.44%);
-    height: 822px;
+    height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
     justify-content: space-between;
     margin-top:200px;
+    padding: 80px;
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+      }
    h1{
     color: #000000;
     font-size: 50px;
     font-weight: bold;
     margin-bottom: 10px;
+
 }
 p{
     font-size: 24px;
     margin-bottom: 10px;
 }
 .mentor-img{
-   width: 648.8px;
-   height: 624px;
-  
+   width: 100%;
+   height: auto;
 
 }
 .expert{
@@ -169,6 +200,7 @@ button{
    border: 1px solid;
    margin: 25px;
    border-radius: 8px;
+   align-items: start;
   
    button{
     background: #FFE9E9;
@@ -192,18 +224,18 @@ button{
 .read{
    margin: 20px;
    margin-left: 20px;
-   justify-content: center;
+   justify-content: space-around;
 }
 .read-blog{
-    margin-top: 150px;
-    align-items: center;
+    margin-top: 150px;  
+    
     h1{
     margin: 15px;
     color: #000000;
     font-size: 50px;
     font-weight: bold;
     margin-top: 10px;
-    margin-left: 60px
+    margin-left: 120px
     }
 }
 
@@ -217,4 +249,18 @@ button{
 .svg{
     margin-left: 160px;
 }
+.star-rating {
+    display: flex;
+    font-size: 10px;
+    margin: 7px;
+    margin-top: 0px;
+    margin-left: 0px;
 
+  }
+  
+  .fa-star, .fa-star-half-alt ,.fa-star-o{
+    color: gold;
+    margin-right: 5px;
+    background-color:#0000;
+  }
+ 

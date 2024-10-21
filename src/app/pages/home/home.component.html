@@ -1,44 +1,49 @@
-
-<div class="containr">
+<div class="container-fluid m-0">
+    <div class="containr">
+        <div class="paint">
+            <app-header></app-header>
     
-    <app-header></app-header>
-
-
-<hr>
-
-<div class="layout  row">
-<div class="col-1  col-md-1"></div>
-<div class="col-6  col-md-6   banner text-center ">
-    <h1 ><span class="color1">Welcome to tac</span>  <span class="color2">Grow Your Skills to Advance</span></h1>
-    <p >Explore curated learning paths to enhance your skills <br>and advance your career...</p>
+    
+            <hr>
+            
+            <div class="layout  row">
+            <div class="col-6  col-md-6   banner ">
+                <h1 ><span class="color1">Welcome to tac</span>  <span class="color2">Grow Your Skills to Advance</span></h1>
+                <p >Explore curated learning paths to enhance your skills <br>and advance your career...</p>
+                <div class="head-button">
+                    <button class="button" routerLink="/">Get Start</button>
+                    <button class="button" routerLink="/">Learn More</button>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-6 screen-img-container d-flex justify-content-center justify-content-md-end mt-3">
+                <img src="assets/images/book.png" alt="screen" class="img-fluid screen-img"/>
+            </div>  
+            <hr>
+              
+            </div>
+        </div>
+    
+    <br><br>
+    <div class="explore col-12 col-md-12 my-5">
+    <h1><span class="color1">Explore</span>
+    <span class="color2">1000+</span>
+    <span class="color1">Online courses</span></h1>
+    <p>Look into yourself, get something in return as your Achievement Look into yourself,get something <br> in Return as your achievement</p>
+    </div>
+    <br>
+    
     <div>
-        <button class="button" routerLink="/">Get Start</button>
-        <button class="button" routerLink="/">Learn More</button>
+        <app-dashboard></app-dashboard>
+    </div>
+    
+    <div class="my-5">
+    <app-library></app-library>
+    </div>
+    
+    <div>
+    <app-footer></app-footer>
+    </div>   
     </div>
 </div>
-<div class="col-5 col-md-5 screen-img-container d-flex justify-content-center justify-content-md-end mt-3">
-    <img src="assets/screenimg.png" alt="screen" class="img-fluid screen-img"/>
-</div>       
-</div> <br><br>
-<hr>
-<br><br>
-<div class="explore col-12 col-md-12 my-5">
-<h1><span class="color1">Explore</span>
-<span class="color2">1000+</span>
-<span class="color1">Online courses</span></h1>
-<p>Look into yourself, get something in return as your Achievement Look into yourself,get something <br> in Return as your achievement</p>
-</div>
-<br>
 
-<div>
-    <app-dashboard></app-dashboard>
-</div>
-
-<div class="my-5">
-<app-library></app-library>
-</div>
-
-<div>
-<app-footer></app-footer>
-</div>   
-</div>

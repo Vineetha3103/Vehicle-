@@ -2,22 +2,13 @@
     <h1 class="h1">Library</h1>
     <div>
         <h3 class="h3">Book Category</h3>
-        <div class=" d-flex flex-wrap justify-content-center Books " >
-            <p class="p mx-2">All</p>
-            <p class="p">category Book 1</p>
-            <p class="p"> category Book 2</p>
-            <p class="p">category Book 3</p>
-            <p class="p">category Book 4</p>
-            <p class="p">category Book 5</p>
-            <p class="p">category Book 6</p>
-            <p class="p">category Book 7</p>
-            <p class="p">category Book 8</p>
-            <p class="p">category Book 9</p>
+        <div class=" d-flex flex-wrap Books  " >
+            <p class="p " *ngFor="let category of bookCategories">{{ category }}</p>
         </div>
     </div>
     <div >
         <div class="row mt-4">
-            <div  class=" card-container col-md-4" *ngFor="let book of books">
+            <div  class=" card-container col-12 col-sm-6 col-md-4" *ngFor="let book of books">
                 <div class="card  mb-4">
                     <div class="image-container">
                         <img [src]="book.image" alt="{{ book.title }}" class="img-fluid"> 
@@ -25,7 +16,20 @@
                     <div class="text-container">
                         <h1>{{ book.title }}</h1>
                         <p>by {{ book.author }}</p>
-                        <p>{{ book.rating }}</p>
+                        
+                        <div class="star-rating">
+                            <ng-container *ngFor="let star of stars; let i = index">
+                                <ng-container *ngIf="book.rating === '0'">
+                                    <i class="fa fa-star-o" aria-hidden="true"></i> 
+                                </ng-container>
+                                <ng-container *ngIf="book.rating !== '0'">
+                                    <i *ngIf="i < getFullStars(book.rating)" class="fa fa-star"></i>
+                                    <i *ngIf="i === getFullStars(book.rating) && hasHalfStar(book.rating)" class="fa fa-star-half-alt"></i> <!-- Half star -->
+                                    <i *ngIf="i > getFullStars(book.rating) || (i === getFullStars(book.rating) && !hasHalfStar(book.rating))" class="fa fa-star-o"></i> <!-- Empty star -->
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                        
                         <p class="available">{{ book.availability }}</p>
                     </div>
                 </div>
@@ -39,9 +43,9 @@
         <div class="reading">
             <h1>Top Categories Books</h1>
             <button>Start Reading&#x279C;</button>
-            <svg class="animated-line" width="100%" height="150" class="svg">
+            <svg class="animated-line" max-width="100%" width="100%" height="150" class="svg"  >
                 <path
-                  d="M10 180 Q 250 -160,800 500 T 600 80"
+                  d="M10 100 Q 150 -220,1200 500 T 600 80"
                   fill="transparent"
                   stroke="#005792"
                   stroke-width="4"
@@ -66,7 +70,7 @@
 
 
 </div>
-    <div class="mentors ">
+   <div class="mentors ">
         <div class=" col-12 col-md-6 p-5 ">
             <h1>Meet with our Expert Mentors</h1>
             <p>Minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. duis enim velit mollit. Exercitation veniam consequat.</p>
@@ -76,33 +80,35 @@
             <img src="assets/images/mentors.png" alt="mentors" class="mentor-img"/>
         </div>
     </div>
-<div class="read-blog">
-    <h1>Read Blog</h1>   
-    <div class="read row">
-        <div class="blog col-12 col-md-4 col-lg-4" >
-            <div class="dev"></div>
-            <hr>
-            <button>Development</button>
-            <h6>Generating RPG Tethered: Phase Of development</h6>
-            <hr>
-            <p>09 September 2024</p>
+<div >
+    <div class="read-blog">
+        <h1>Read Blog</h1>   
+        <div class="read row ">
+            <div class="blog col-12 col-md-5 col-lg-4" >
+                <div class="dev"></div>
+                <hr>
+                <button>Development</button>
+                <h6>Generating RPG Tethered: Phase Of development</h6>
+                <hr>
+                <p>09 September 2024</p>
+            </div>
+            <div class="blog col-12 col-md-4 col-lg-4">
+                <div class="dev"></div>
+                <hr>
+                <button class="hr">UI & UX</button>
+                <h6>Generating RPG Tethered: Phase Of development</h6>
+                <hr>
+                <p>09 September 2024</p>
+            </div>
+            <div class="blog col-12 col-md-4 col-lg-4">
+                <div class="dev"></div>
+                <hr>
+                <button class="hr">HR</button>
+                <h6>Generating RPG Tethered: Phase Of development</h6>
+                <hr>
+                <p>09 September 2024</p>
+            </div>
         </div>
-        <div class="blog col-12 col-md-4 col-lg-4">
-            <div class="dev"></div>
-            <hr>
-            <button class="hr">UI & UX</button>
-            <h6>Generating RPG Tethered: Phase Of development</h6>
-            <hr>
-            <p>09 September 2024</p>
-        </div>
-        <div class="blog col-12 col-md-4 col-lg-4">
-            <div class="dev"></div>
-            <hr>
-            <button class="hr">HR</button>
-            <h6>Generating RPG Tethered: Phase Of development</h6>
-            <hr>
-            <p>09 September 2024</p>
-        </div>
-    </div>
+</div>
     
 </div>

@@ -2,86 +2,44 @@ $primary-color: #3498db;
 $text-color: #394762;
 $hover-color: #005792;
 
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 5rem;
-  color: $text-color;
-  font-family: 'Nunito', sans-serif;
-  font-size: 24px;
 
-  .navbar-logo img {
+.container{
+  justify-content: space-between;
+}
+.navbar {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-around;
+
+  .navbar-logo {
     height: 50px;
+    width: auto;
   }
 
-  .navbar-menu {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
+  .nav-link {
+    color: $text-color;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s;
 
-    li {
-      a {
-        color: $text-color;
-        text-decoration: none;
-        margin-right: 55px;
-        font-weight: bold;
-        transition: color 0.3s;
-
-        &:hover {
-          background-color: $hover-color;
-          border-radius: 7px;
-          padding: 2px 20px;
-          color: #ffffff;
-        }
-      }
+    &:hover {
+      color: $hover-color;
     }
   }
 
   .navbar-toggler {
-    display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
     color: $text-color;
-    cursor: pointer;
+    border: none;
+    font-size: 1.5rem;
   }
 }
 
-// Responsive styles
-@media (max-width: 768px) {
-  .navbar {
-    padding: 1rem;
-
-    .navbar-menu {
-      display: none;
-      flex-direction: column;
-      gap: 0.5rem;
-      background-color: $primary-color;
-      position: absolute;
-      top: 70px;
-      right: 5%;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
-      li {
-        a {
-          color: #ffffff;
-          margin: 0;
-          padding: 10px;
-        }
-      }
+// Customize the navbar menu appearance on large screens
+@media (min-width: 768px) {
+  .navbar-nav {
+    .nav-item {
+      margin-right: 30px;
     }
-
-    // Show the toggler button on small screens
-    .navbar-toggler {
-      display: block;
-    }
-  }
-
-  // Show the navbar menu if isNavbarOpen is true
-  .navbar-menu[ng-reflect-ng-if='true'] {
-    display: flex;
   }
 }

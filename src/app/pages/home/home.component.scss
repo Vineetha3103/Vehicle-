@@ -7,31 +7,46 @@ $text-color: #005792;
 $hover-color: #005792;
 .containr{
     font-family: 'Nunito', sans-serif;  
+    
    
     
 }
+.paint{
+    background: linear-gradient(205deg, rgba(189, 214, 242, 0.35) 45%, rgba(255, 255, 255, 0.7)45%);
+}
 
+
+.banner{
+    text-align: start;
+    
+ }
     .layout{
         display: flex;
         justify-content: end;
         align-items: center;
         font-family: 'Nunito', sans-serif;  
-        margin-right: 0px;  
-    }   
-  
-        .h1 {
+        margin-right: 0px; 
+        
+        
+ 
+     
+         
+        h1 {
           font-size: 52px;
           font-weight: bold;
+          margin-left: 65px;
+          
         
         }
-        .p {
+        p {
           font-size: 0.9rem;
           font-weight: 300px;
           color:#8A8A8A;
           line-height: 24.55px;
+          margin-left: 65px;
         }
       
-   
+    }
     .color1{
         color: #000000;
         margin-right: 10px;
@@ -47,7 +62,9 @@ $hover-color: #005792;
         margin: 0 !important;
         padding: 0 !important;
     }
-    
+    .head-button{
+        margin-left: 65px;
+       }
     .button{
         color: $text-color;
         margin: 3px;
@@ -56,6 +73,7 @@ $hover-color: #005792;
         font-size: 18px;
         border-radius: 7px;
         border: 1px solid $text-color;
+       
 
         &:hover {
             background-color: $hover-color;

@@ -1,8 +1,8 @@
 <div class="row">
   <div #scrollContainer class="scroll-container col-12 col-md-4">
-    <div *ngFor="let path of learningPaths" class="layout">
+    <div *ngFor="let path of learningPaths" class="layout"  (click)="goToDepartment(path.department)">
       <div class="text-container m-3">
-        <h6 (click)="goToDepartment(path.department)">{{ path.department }}</h6>
+        <h6 >{{ path.department }}</h6>
         <p>{{ path.description }}</p>
       </div>
       <div class="image-container">
@@ -12,13 +12,18 @@
   </div>
 
   <div class="container col-12 col-md-8">
-    <div class="banner" *ngIf="selectedPath">
-      <img [src]="'assets/images/' + selectedPath.image" alt="{{ selectedPath.department }}" class="banner-image" />
+    <div class="banner " *ngIf="selectedPath">
+      <img
+        [src]="'assets/images/' + selectedPath.image"
+        alt="{{ selectedPath.department }}"
+        class="banner-image img-fluid"
+      />
     </div>
-
-    <div class="content" *ngIf="selectedPath">
+  
+    <div class="content mt-3 " *ngIf="selectedPath">
       <h4>{{ selectedPath.department }}</h4>
       <p>{{ selectedPath.details }}</p>
     </div>
   </div>
+  
 </div>
