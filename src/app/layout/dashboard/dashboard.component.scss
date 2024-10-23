@@ -1,10 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 $text-color: #005792;
 
-.img-fluid{
-    height: 65px !important;
-    width: 65px;
-}
+
 .layout {
     font-size: 0; 
     display: flex;
@@ -16,15 +13,32 @@ $text-color: #005792;
     padding: 1.5rem;
     width: 450px;
 
-    &:hover {
+    &:hover{
       background-color: #F8F8FF;
       display: flex;
       justify-content: center;
       border-radius: 10px;
       color: $text-color;
       width: 450px;
+      margin-right: 200px;
     
      
+    }
+    .line {
+      width: 2px;
+      height: 100px;
+      background-color: black;
+      display: none; /* Initially hidden */
+    }
+
+    
+    .container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .container:hover.line{
+      display: block;
     }
 
     p{
@@ -40,7 +54,7 @@ $text-color: #005792;
     vertical-align: top; 
     font-size: 14px;
     width: 200px;
-    margin-left: 20px;
+    
   }
   
   .image-container .image {
@@ -56,9 +70,11 @@ $text-color: #005792;
     overflow: hidden;
     overflow-y: scroll;
     width: 450px;
+   
   }
   .scroll-container::-webkit-scrollbar {
     width: 8px;
+    
 }
 
 .scroll-container::-webkit-scrollbar-track {
@@ -86,7 +102,7 @@ $text-color: #005792;
 .banner {
   background-color: #d9d9d9;
   border-radius: 18px;
-  width: 829px;
+  max-width: 829px;
   margin-bottom: 15px;
   margin-top: 30px;
   height: 529px;
@@ -94,13 +110,13 @@ $text-color: #005792;
   
 
 }
+.img-fluid{
+  height: 370px !important;
+  width: 100%;
+}
 
 /* Ensure the image is responsive */
-.banner-image {
-  width: 100%;
-  height: auto;
-  border-radius: 18px;
-}
+
 
 .content{/* Text styles */
   max-width: 700px;

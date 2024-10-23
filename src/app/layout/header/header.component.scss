@@ -8,7 +8,8 @@ $hover-color: #005792;
 }
 .navbar {
   font-family: 'Nunito', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: bold;
   display: flex;
   justify-content: space-around;
 
@@ -19,12 +20,12 @@ $hover-color: #005792;
 
   .nav-link {
     color: $text-color;
-    font-size: 24px;
-    font-weight: bold;
     transition: color 0.3s;
 
     &:hover {
-      color: $hover-color;
+      background-color: $hover-color; 
+      border-radius: 7px;
+      color: #ffff;
     }
   }
 

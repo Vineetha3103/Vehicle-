@@ -13,9 +13,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DashboardComponent {
   learningPaths: any[] = [];
   departmentName: string | null = '';
-  selectedPath: any;
+  
   department: any = {};
   posts: any = [];
+  selectedPath: any = null;
 
   constructor(private http:HttpClient,private route:ActivatedRoute,private router:Router){}
 
@@ -25,23 +26,10 @@ export class DashboardComponent {
 
         this.http.get<any>("assets/dashboard.json").subscribe(data => {
           this.learningPaths = data.learningPaths;
-       }); 
-       
-      this.route.paramMap.subscribe(params => {
-        this.departmentName = params.get('departmentName');
-        if (this.departmentName) {
-          this.selectedPath = this.learningPaths.find(
-            path => path.department === this.departmentName
-          );
-        }
-      });
-    
-  
-  
-    
+       });   
         
   }
   goToDepartment(department: string) {
-    this.router.navigate(['/department',department]);
+    this.selectedPath = this.learningPaths.find(path => path.department === department)
   }
 }
